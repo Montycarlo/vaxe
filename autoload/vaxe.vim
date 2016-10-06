@@ -226,6 +226,8 @@ function! vaxe#AutomaticHxml()
         call vaxe#lime#ProjectLime(g:vaxe_lime)
     elseif exists ("g:vaxe_flow")
         call vaxe#flow#ProjectFlow(g:vaxe_flow)
+    elseif exists ("g:vaxe_hxproj")
+        call vaxe#hxproj#ProjectHxproj(g:vaxe_hxproj)
     elseif exists('g:vaxe_hxml')
         call vaxe#ProjectHxml(g:vaxe_hxml)
     else
@@ -342,6 +344,9 @@ function! vaxe#SetCompiler()
     elseif exists("g:vaxe_flow") || exists("b:vaxe_flow")
         let build_command = "cd " . escaped_wd . " && "
                     \."haxelib run flow build " . g:vaxe_flow_target . " 2>&1"
+    elseif exists("g:vaxe_hxproj") || exists("b:vaxe_hxproj")
+        let build_command = "cd " . escaped_wd . " && "
+                    \."hb make 2>&1"
     else
         let vaxe_hxml = vaxe#CurrentBuild()
         let escaped_hxml = fnameescape(vaxe_hxml)
