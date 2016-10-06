@@ -118,6 +118,11 @@ workflows.  If a flow project is found, Vaxe will use it for builds and
 completions. You can specify a default target if you only work with one
 platform.
 
+## Hxproj Project Support
+
+Vaxe supports [Hxproj][github 20]
+workflows.  If the `g:vaxe_hxproj` variable is set, Vaxe will use hxproj for building.
+
 ## Omni-completions
 
 Vaxe provides an
@@ -307,6 +312,7 @@ off of [his version][github 12].
 [github 17]: https://github.com/deltaluca
 [github 18]: https://github.com/Roger
 [github 19]: https://github.com/underscorediscovery/flow
+[github 20]: https://github.com/Montycarlo/hxproj
 [github 2]: https://github.com/openfl/lime
 [github 3]: https://github.com/bling/vim-airline
 [github 4]: https://github.com/Lokaltog/powerline
